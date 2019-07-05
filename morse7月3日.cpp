@@ -13,28 +13,28 @@ void setup()
 }
 void loop()
 {  
-   char str = "";  //½ÓÊÕÊäÈëµÄ×ÖÄ¸  
-   String morse = "";  //ÊäÈë×ÖÄ¸¶ÔÓ¦µÄÄ¦Ë¹ÃÜÂë  
-   if(str >= 65 && str <= 90) { morse = MORSE[str-65]; } //Èç¹ûÊÇ´óĞ´×ÖÄ¸  
-   else if(str >= 97 && str <= 122) { morse = MORSE[str-97]; } //Èç¹ûÊÇĞ¡Ğ´×ÖÄ¸  
-   if(morse != "") //Èç¹ûÄ¦Ë¹ÃÜÂë²»Îª¿Õ  
+   char str = "";  //æ¥æ”¶è¾“å…¥çš„å­—æ¯  
+   String morse = "";  //è¾“å…¥å­—æ¯å¯¹åº”çš„æ‘©æ–¯å¯†ç   
+   if(str >= 65 && str <= 90) { morse = MORSE[str-65]; } //å¦‚æœæ˜¯å¤§å†™å­—æ¯  
+   else if(str >= 97 && str <= 122) { morse = MORSE[str-97]; } //å¦‚æœæ˜¯å°å†™å­—æ¯  
+   if(morse != "") //å¦‚æœæ‘©æ–¯å¯†ç ä¸ä¸ºç©º  
    {    
-    Serial.println(morse);  //Êä³öÄ¦Ë¹ÃÜÂë    
+    Serial.println(morse);  //è¾“å‡ºæ‘©æ–¯å¯†ç     
     for(int i = 0; i < 4; i++)    
      {      
-      if(morse[i]==".") //Èç¹ûÊÇ . µÆÁÁ 250 ºÁÃë      
+      if(morse[i]==".") //å¦‚æœæ˜¯ . ç¯äº® 250 æ¯«ç§’      
     {       
       digitalWrite(ledPin,HIGH);
       delay(250);        
       digitalWrite(ledPin,LOW);     
     }     
-      else if(morse[i]=="_")  //Èç¹ûÊÇ _ µÆÁÁ750ºÁÃë      
+      else if(morse[i]=="_")  //å¦‚æœæ˜¯ _ ç¯äº®750æ¯«ç§’      
           {       
             digitalWrite(ledPin,HIGH);        
             delay(750);         
             digitalWrite(ledPin,LOW);     
                    }      
-        delay(250); //Ä¦Ë¹ÃÜÂëÖ®¼ä¼ä¸ô 250 ºÁÃë    
+        delay(250); //æ‘©æ–¯å¯†ç ä¹‹é—´é—´éš” 250 æ¯«ç§’    
      } 
    }
  }
